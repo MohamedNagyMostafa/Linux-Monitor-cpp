@@ -23,15 +23,16 @@ Processor& System::Cpu() {
 
 // Done: Return a container composed of the system's processes
 vector<Process>& System::Processes() {
+    processes_.clear();
 
-  vector<int> pids = LinuxParser::Pids();
+    vector<int> pids = LinuxParser::Pids();
 
   for(int processPid : pids)
   {
     std::string processUserName       = LinuxParser::User(processPid);
     std::string processCommand        = LinuxParser::Command(processPid);
     std::string processRam            = LinuxParser::Ram(processPid);
-    long int processUpTime            = LinuxParser::UpTime(processPid);
+    long int processUpTime            = LinuxParser::UpTime(processPid) - LinuxParser::UpTime() ;
     float processCpuUtilization       = LinuxParser::ActiveJiffies(processPid)/ float(LinuxParser::ActiveJiffies());
 
     Process process(processPid, processUserName, processCommand, processCpuUtilization, processRam, processUpTime);

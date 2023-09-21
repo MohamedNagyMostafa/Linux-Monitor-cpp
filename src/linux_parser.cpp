@@ -108,15 +108,15 @@ long LinuxParser::UpTime() {
 
   if(fileStream.is_open())
   {
-    long suspendTime, idleTime;
+    long suspendTime;
     string line, ignore;
 
     std::getline(fileStream, line);
     std::istringstream stringStream(line);
 
-    stringStream >> suspendTime >> ignore  >> idleTime;
+    stringStream >> suspendTime;
 
-    totalUpTime =  suspendTime + idleTime;
+    totalUpTime =  suspendTime ;
   }
   return totalUpTime;
 }
