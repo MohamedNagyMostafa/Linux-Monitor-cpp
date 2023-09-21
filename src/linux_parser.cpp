@@ -361,7 +361,7 @@ long LinuxParser::UpTime(int pid) {
     int counter = 0;
     while(std::getline(fileStream, value, ' '))
     {
-      if(counter == 22)
+      if(counter == 21)
       {
         upTime = std::stol(value);
         break;

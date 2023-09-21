@@ -32,7 +32,7 @@ vector<Process>& System::Processes() {
     std::string processUserName       = LinuxParser::User(processPid);
     std::string processCommand        = LinuxParser::Command(processPid);
     std::string processRam            = LinuxParser::Ram(processPid);
-    long int processUpTime            = LinuxParser::UpTime(processPid) - LinuxParser::UpTime() ;
+    long int processUpTime            = LinuxParser::UpTime() -  LinuxParser::UpTime(processPid) ;
     float processCpuUtilization       = LinuxParser::ActiveJiffies(processPid)/ float(LinuxParser::ActiveJiffies());
 
     Process process(processPid, processUserName, processCommand, processCpuUtilization, processRam, processUpTime);
