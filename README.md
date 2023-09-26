@@ -1,8 +1,7 @@
 # System Monitor
 
-This project is a part of Udacity C++ Nanodegree. The project shows processes with the highest CPU usage on the system. You may click on the image below to check the demo video.
+This project is a part of Udacity C++ Nanodegree. The project shows processes with the highest CPU usage on the system. You may check the demo video: https://youtu.be/hKWJ_XzrWxc .
 
-[![Watch the video](https://github.com/MohamedNagyMostafa/Linux-Monitor-cpp/assets/20774864/36e5f0fb-86ce-4ee7-82b5-fb2ad0fc2ce8)](https://youtu.be/hKWJ_XzrWxc)
 
 
 ## To get started
